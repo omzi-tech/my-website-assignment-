@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Ordering System</title>
+    <link rel="stylesheet" href="book-order.css">
+    <script>
+        function calculateGrandTotal() {
+            var rows = document.querySelectorAll('tbody tr');
+            var grandTotal = 0;
+
+            rows.forEach(function (row) {
+                var unitPrice = parseFloat(row.querySelector('input[name="unitPrice[]"]').value);
+                var quantity = parseInt(row.querySelector('input[name="quantity[]"]').value);
+                var total = unitPrice * quantity;
+
+                row.querySelector('input[name="total[]"]').value = total.toFixed(2);
+                grandTotal += total;
+            });
+
+            document.querySelector('#grandTotal').value = grandTotal.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <div class="back-button-container">
+        <a class="back-button" href="index.html">Back</a>
+    </div>
+</div>
+    <h1>Book Order Form</h1>
+
+    <div class="form-container">
+        <form id="bookForm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td>
+                            <select>
+                                <option disabled selected>Please choose the category...</option>
+                                <option>Fiction</option>
+                                <option>Non-fiction</option>
+                                <option>Biography</option>
+                                <option>History</option>
+                                <option>Science</option>
+                            </select>
+                        </td>
+                        <td><input type="number" step="0.01" name="unitPrice[]" value="0.00"></td>
+                        <td><input type="number" name="quantity[]" value="0"></td>
+                        <td><input type="text" name="total[]" value="0.00" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td>
+                            <select>
+                                <option disabled selected>Please choose the category...</option>
+                                <option>Fiction</option>
+                                <option>Non-fiction</option>
+                                <option>Biography</option>
+                                <option>History</option>
+                                <option>Science</option>
+                            </select>
+                        </td>
+                        <td><input type="number" step="0.01" name="unitPrice[]" value="0.00"></td>
+                        <td><input type="number" name="quantity[]" value="0"></td>
+                        <td><input type="text" name="total[]" value="0.00" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td>
+                            <select>
+                                <option disabled selected>Please choose the category...</option>
+                                <option>Fiction</option>
+                                <option>Non-fiction</option>
+                                <option>Biography</option>
+                                <option>History</option>
+                                <option>Science</option>
+                            </select>
+                        </td>
+                        <td><input type="number" step="0.01" name="unitPrice[]" value="0.00"></td>
+                        <td><input type="number" name="quantity[]" value="0"></td>
+                        <td><input type="text" name="total[]" value="0.00" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td>
+                            <select>
+                                <option disabled selected>Please choose the category...</option>
+                                <option>Fiction</option>
+                                <option>Non-fiction</option>
+                                <option>Biography</option>
+                                <option>History</option>
+                                <option>Science</option>
+                            </select>
+                        </td>
+                        <td><input type="number" step="0.01" name="unitPrice[]" value="0.00"></td>
+                        <td><input type="number" name="quantity[]" value="0"></td>
+                        <td><input type="text" name="total[]" value="0.00" readonly></td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td>
+                            <select>
+                                <option disabled selected>Please choose the category...</option>
+                                <option>Fiction</option>
+                                <option>Non-fiction</option>
+                                <option>Biography</option>
+                                <option>History</option>
+                                <option>Science</option>
+                            </select>
+                        </td>
+                        <td><input type="number" step="0.01" name="unitPrice[]" value="0.00"></td>
+                        <td><input type="number" name="quantity[]" value="0"></td>
+                        <td><input type="text" name="total[]" value="0.00" readonly></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th class="calculate-container" colspan="5"><button type="button" onclick="calculateGrandTotal()">Calculate Grand Total Price</button></th>
+                        <th class="calculate-container" colspan="2">
+                            <label for="grandTotal"></label>
+                            <input type="text" id="grandTotal" name="grandTotal" value="0.00" readonly class="larger-input grand-total">
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
