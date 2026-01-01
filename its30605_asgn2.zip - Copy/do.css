@@ -1,0 +1,177 @@
+
+.design:hover {
+    background-color: lightgray;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+
+
+header {
+    background-color: #1e8a68;
+    color: #fff;
+    text-align: left;
+    padding: 20px 0;
+    font-size: 24px;
+    font-family: 'Your Google Font', sans-serif;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.left, .right {
+    width: 45%;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.designs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.design {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    margin: 10px 0;
+}
+
+.cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: right;
+}
+
+#total {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#paymentMessage {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Style the list container */
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style each list item (two columns) */
+li {
+    width: 48%; /* Set to 48% for two columns with a small gap in between */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Style the shirt images */
+.type {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+    height: auto;
+}
+
+/* Style the shirt labels and checkboxes */
+.shirt {
+    display: none; /* Hide the checkboxes */
+}
+
+/* Style the label text */
+label {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Add hover effect to labels */
+label:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style the checked checkboxes */
+.shirt:checked + label {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Style the checked checkbox label text */
+.shirt:checked + label:hover {
+    background-color: #555;
+}

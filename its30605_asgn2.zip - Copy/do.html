@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="do.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Your+Google+Font&display=swap" rel="stylesheet">
+    <title>Customized Shirt Shop</title>
+</head>
+<body>
+    <header>
+        <h1>Customize Your Shirt With Us!</h1>
+    </header>
+    <div class="container">
+        <div class="left">
+            <h2>Select Type of Shirt</h2>
+            <ul>
+                <li>
+                    <img src="tee.jpg" alt="tshirt" class="type" data-price="20">
+                    <label><input type="checkbox" class="shirt" data-price="20">Tee Shirt (RM20)</label>
+                </li>
+                <li>
+                    <img src="polo.jpg" alt="polo" class="type" data-price="25">
+                    <label><input type="checkbox" class="shirt" data-price="25">Polo Shirt (RM25)</label>
+                </li>
+                <li>
+                    <img src="booo.jpg" alt="buttonup" class="type" data-price="35">
+                    <label><input type="checkbox" class="shirt" data-price="35">Button Up (RM35)</label>
+                </li>
+                <li>
+                    <img src="hood.jpg" alt="hoodie" class="type" data-price="75">
+                    <label><input type="checkbox" class="shirt" data-price="75">Hoodie (RM75)</label>
+                </li>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Select Design</h2>
+            <div class="designs">
+                
+                <div class="designs">
+                    <img src="download (1).jpg" alt="Design 1" class="design" data-price="10">
+                    <img src="download (2).jpg" alt="Design 2" class="design" data-price="15">
+                    <img src="download (3).jpg" alt="Design 3" class="design" data-price="20">
+                    <img src="download (4).jpg" alt="Design 4" class="design disabled" data-price="25">
+                    <img src="download (5).jpg" alt="Design 5" class="design" data-price="15">
+                    <img src="download.png" alt="Design 6" class="design" data-price="10">
+            </div>
+            <label for="designSelect">Please Select your design:</label>
+            <select id="designSelect">
+                <option value="10">Design 1 - RM10</option>
+                <option value="15">Design 2 - RM15</option>
+                <option value="20">Design 3 - RM20</option>
+                <option value="25" disabled>Design 4 - RM25</option>
+                <option value="15">Design 5 - RM15</option>
+                <option value="10">Design 6 - RM10</option>
+            </select>
+            <label for="embroidery">Please Select Embroidery:</label>
+            <select id="embroidery">
+                <option value="0">None</option>
+                <option value="10">Basic Embroidery - RM10</option>
+                <option value="20">Premium Embroidery - RM20</option>
+            </select>
+            <input type="file" id="logo" accept=".jpg, .jpeg, .png">
+        </div>
+    </div>
+    <div class="cart">
+        <p>Your Cart : RM <span id="total">0.00</span></p>
+        <button id="proceedBtn">Proceed to Payment</button>
+        <p id="paymentMessage">Please Pay RM 0.00</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const shirtCheckboxes = document.querySelectorAll('.shirt');
+            const designSelect = document.getElementById('designSelect');
+            const embroiderySelect = document.getElementById('embroidery');
+            const logoInput = document.getElementById('logo');
+            const totalText = document.getElementById('total');
+            const proceedBtn = document.getElementById('proceedBtn');
+            const paymentMessage = document.getElementById('paymentMessage');
+        
+            function calculateTotal() {
+                let shirtTotal = 0;
+                shirtCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        shirtTotal += parseFloat(checkbox.getAttribute("data-price"));
+                    }
+                });
+        
+                const designPrice = parseFloat(designSelect.value);
+                const embroideryPrice = parseFloat(embroiderySelect.value);
+                let total = shirtTotal + designPrice + embroideryPrice;
+        
+                if (logoInput.files.length > 0) {
+                    total += 5; 
+                }
+        
+                totalText.textContent = total.toFixed(2);
+            }
+        
+            function totalPayment() {
+                const totalAmount = parseFloat(totalText.textContent);
+                if (totalAmount > 150) {
+                    const discountedAmount = totalAmount * 0.9; 
+                    paymentMessage.textContent = `Congratulations! You are eligible for a 10% discount. Please Pay RM ${discountedAmount.toFixed(2)}`;
+                } else {
+                    paymentMessage.textContent = `Thank you for your purchase. Please Pay RM ${totalAmount.toFixed(2)}`;
+                }
+            }
+        
+            proceedBtn.addEventListener("click", totalPayment);
+            shirtCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", calculateTotal);
+            });
+            designSelect.addEventListener("change", calculateTotal);
+            embroiderySelect.addEventListener("change", calculateTotal);
+            logoInput.addEventListener("change", calculateTotal);
+        });
+    </script>
+</body>
+</html>
