@@ -1,0 +1,189 @@
+body,
+h1,
+ul {
+    margin: auto;
+    padding: auto;
+
+}
+
+body {
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(white, beige);
+    font-weight: bold;
+}
+
+header {
+    background: linear-gradient(beige, rgb(162, 162, 140));
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+.type {
+    width: 30%;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+
+}
+
+
+img {
+    border: solid;
+    border-radius: 50%%;
+    opacity: 95%%;
+    border-color: black;
+
+    box-shadow: black;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.hr-lines {
+
+    font-family: sans-serif;
+    margin: auto;
+    color: black;
+    text-align: center;
+    font-size: 30px;
+    max-width: 50%;
+    position: relative;
+
+
+}
+
+.hr-lines:before {
+
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: #000;
+    left: 0;
+    top: 50%;
+    position: absolute;
+}
+
+.hr-lines:after {
+
+    content: "";
+    display: block;
+    width: 120px;
+    height: 2px;
+    background: #000;
+    right: 0;
+    top: 50%;
+    position: absolute;
+}
+
+.shirt {
+
+    cursor: pointer;
+}
+
+.left {
+    flex: 1;
+    background: linear-gradient(white, rgb(255, 255, 225));
+    padding: 20px;
+    margin: 10px;
+
+    box-shadow: 0 0 0 1px black;
+}
+
+.left h2 {
+    font-size: 18px;
+}
+
+.right {
+    flex: 1;
+    background: linear-gradient(white, rgb(255, 255, 225));
+    padding: 20px;
+    margin: 10px;
+
+    box-shadow: 0 0 0 1px black;
+}
+
+.right h2 {
+    font-size: 18px;
+}
+
+.designs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.design {
+    width: 30%;
+    margin-bottom: 20px;
+    cursor: zoom-in;
+    transition: background-color 0.3s;
+}
+
+.design:hover {
+    background: transparent;
+    background-color: transparent;
+    transform: scale(1.1);
+
+}
+
+.design {
+    transition: transform .3s;
+}
+
+
+label {
+    display: block;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 5px 0;
+}
+
+.cart {
+    text-align: right;
+    margin-top: 20px;
+}
+
+#total-amount {
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+
+#proceed-to-payment {
+    text-decoration: underline;
+    background-color: green;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message {
+    margin: 10px 20px;
+    margin-top: 1px;
+    font-size: 50px;
+}
+
+#final-amount {
+    font-size: 25px;
+    background-color: rgb(210, 210, 189);
+    border: solid;
+    border-radius: 5px;
+    font-weight: bold;
+    color: black;
+}

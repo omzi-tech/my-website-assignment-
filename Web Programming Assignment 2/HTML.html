@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/ext-css.css">
+    <title>Customized Shirt Shop</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="hr-lines">Customize Your Shirt With Us!</h1>
+    </header>
+    <div class="container">
+        <div class="left">
+            <h2>Select Type of Shirt</h2>
+            <ul id="types">
+                <img src="images/tshirt.png" alt="tshirt" class="type" data-price="20">
+                <li><label><input type="checkbox" class="shirt" data-price="20">Tee Shirt (RM20)</label></li>
+                <br>
+                <img src="images/polo.png" alt="polo" class="type" data-price="25">
+                <li><label><input type="checkbox" class="shirt" data-price="25">Polo Shirt (RM25)</label></li>
+                <br>
+                <img src="images/buttonup.png" alt="buttonup" class="type" data-price="35">
+                <li><label><input type="checkbox" class="shirt" data-price="35">Button Up (RM35)</label></li>
+                <br>
+                <img src="images/hoodie.png" alt="hoodie" class="type" data-price="75">
+                <li><label><input type="checkbox" class="shirt" data-price="75">Hoodie (RM75)</label></li>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Select Design</h2>
+            <div class="designs">
+                <ul>
+                    <li>Design 1</li>
+                </ul>
+                <img src="images/design1.png" alt="Design 1" class="design" data-price="10">
+                <ul>
+                    <li>Design 2</li>
+                </ul>
+                <img src="images/design2.png" alt="Design 2" class="design" data-price="15">
+                <ul>
+                    <li>Design 3</li>
+                </ul>
+                <img src="images/design3.png" alt="Design 3" class="design" data-price="20">
+                <ul>
+                    <li>Design 4</li>
+                </ul>
+                <img src="images/design4.png" alt="Design 4" class="design" data-price="25">
+                <ul>
+                    <li>Design 5</li>
+                </ul>
+                <img src="images/design5.png" alt="Design 5" class="design" data-price="30">
+                <ul>
+                    <li>Design 6</li>
+                </ul>
+                <img src="images/design6.png" alt="Design 6" class="design" data-price="35">
+
+            </div>
+            <label for="design-select">Please Select your design:</label>
+            <select id="design-select">
+                <option value="10">Design 1 (RM10)</option>
+                <option value="15">Design 2 (RM15)</option>
+                <option value="20">Design 3 (RM20)</option>
+                <option value="25">Design 4 (RM25)</option>
+                <option value="30">Design 5 (RM30)</option>
+                <option value="35">Design 6 (RM35)</option>
+            </select>
+            <div>
+                <label for="embroidery-select">Include Embroidery (RM10): <input type="checkbox"
+                        id="embroidery-select"></label>
+
+            </div>
+            <p></p>
+            <div>
+                <label for="include-logo">Include Logo (RM25): <input type="checkbox" id="include-logo"> </label>
+                <p></p>
+                <input type="file" id="logo-file" accept="image/*">
+            </div>
+        </div>
+    </div>
+    <div class="cart">
+        Your Cart: <span id="total-amount">RM 0.00</span>
+        <button id="proceed-to-payment">Proceed to Payment</button>
+    </div>
+    <div class="message">
+        Please Pay <span id="final-amount">RM 0.00</span>
+    </div>
+    <script src="js/JS.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+
+</html>
